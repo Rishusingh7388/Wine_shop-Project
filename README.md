@@ -9,7 +9,11 @@ Team Members:-
 
 Role of team members:-
 Shubhi Tiwari:- Landing Page
+
 Shubhi Jain:- Login/Signup Page
+
 Mohd Shamaiel Wani:- Product Page
+
 Vishwajeet Patil:- Product description Page
+
 Rishutosh Singh:- Cart & Checkout Page
