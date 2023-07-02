@@ -6,7 +6,7 @@ Team Members:-
 
 2: Shubhi Tiwari
 
-3: Shubhi Jain
+3: Shruti Jain
 
 4: Mohd Shamaiel Wani
 
@@ -17,7 +17,7 @@ Role of team members:-
 
 Shubhi Tiwari:- Landing Page
 
-Shubhi Jain:- Login/Signup Page
+Shruti Jain:- Login/Signup Page
 
 Mohd Shamaiel Wani:- Product Page
 
