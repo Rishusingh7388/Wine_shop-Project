@@ -52,6 +52,9 @@
     width: 25%;
     margin-left: 5%;
 }
+#cost h3{
+    margin-top: 0%;
+}
 #item{
     display: flex;
     justify-content: space-between;
