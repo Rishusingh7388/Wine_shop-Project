@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+   <div id="navbar">
+    <!-- //navbar here -->
+
+   </div> 
+
+   <div id="container"> 
+
+      <div id="sideDiv">
+            
+        <select  id="select-price" onchange = "sortByPrice()" >
+          <option value="">Sort By: Price</option>
+          <option value="htl">High to Low</option>
+          <option value="lth">Low to High</option>
+        </select>
+
+        <select  id="select-name" onchange="sortByNames()">
+          <option value="">Country</option>
+          <option value="ascending">Ascending</option>
+          <option value="descending">Descending</option>
+        </select>
+
+        <select  id="discount" onchange="filterbyDiscount()">
+          <option value="">Filter By: Discount</option>
+          <option value="30% OFF">30% OFF</option>
+          <option value="25% OFF">25% OFF</option>
+      </select>
+
+      <select  id="brand">
+        <option value="">Category</option>
+        <option value="">Beardo</option>
+        <option value="">Versace</option>
+    </select>
+
+    
+    <select  id="brand">
+      <option value="">Collections</option>
+      <option value="">Beardo</option>
+      <option value="">Versace</option>
+    </select>
+
+    
+    <select  id="brand">
+      <option value="">Pack Size</option>
+      <option value="">Beardo</option>
+      <option value="">Versace</option>
+    </select>
+
+    <select  id="brand">
+      <option value="">Bottle price</option>
+      <option value="">Beardo</option>
+      <option value="">Versace</option>
+    </select>
+
+ 
+
+    </div>
+
+
+      <div id="product-div">
+        <!-- //append data here -->
+      </div>
+     
+      
+   </div>
+     
+
+  <div id="footer">
+    <!-- //footer here -->
+  </div>
+
+
+
+
+</body>
+</html>
+<script src="product.js"></script>
