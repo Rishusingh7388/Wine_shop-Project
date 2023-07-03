@@ -43,7 +43,6 @@
 }
 #product{
     width: 75%;
-    background-color: yellow;
 }
 #total_cost{
     display: flex;
