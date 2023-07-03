@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./checkout.css">
+</head>
+<body>
+    <div id="navbar">
+        <div id="winepark">
+            <a href="">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSefzhCq6ipa2az4jTuvlpHTnuAaHnoNSuNg&usqp=CAU" alt="">
+            </a>
+        </div>
+        <div id="home">
+            <a href=""><img src="https://cdn-icons-png.flaticon.com/128/25/25694.png" alt=""></a>
+            <p>Home</p>
+        </div>
+        <div id="cart">
+            <a href=""><img src="https://cdn-icons-png.flaticon.com/128/3514/3514491.png" alt=""></a>
+            <p>Cart</p>
+        </div>
+        <div id="profile">
+            <a href=""><img src="https://cdn-icons-png.flaticon.com/128/3106/3106921.png" alt=""></a>
+            <p>Sign in</p>
+        </div>
+        <div id="checkout">
+            <a href=""><img src="https://cdn-icons-png.flaticon.com/128/3082/3082383.png" alt=""></a>
+            <p>Checkout & Payment</p>
+        </div>
+        <div id="payment">
+            <a href=""><img src="https://cdn-icons-png.flaticon.com/128/7204/7204809.png" alt=""></a>
+            <p>Order Cofirmation</p>
+        </div>
+    </div>
+    <div id="payment_detail">
+        <h3>Address</h3>
+        <div id="main">
+            <div id="address">
+                <div id="address_detail">
+                    <form action="" id="detail">
+                        <h3>Add address</h3>
+                        <input type="text" id="name" placeholder="Full Name">
+                        <input type="text" id="lane 1" placeholder="Address Line 1">
+                        <input type="text" id="lane 2" placeholder="Address Line 2">
+                        <input type="text" id="pin" placeholder="Pin Code">
+                        <input type="text" id="isc" placeholder="ISD Code">
+                        <input type="text" id="mobile" placeholder="Enter Mobile Number">
+                        <input type="button" id="add" value="ADD ADDRESS">
+                    </form>
+                </div>
+            </div>
+            <div id="pay">
+                <div id="pay_detail">
+                    <h3>Apply promo code</h3>
+                    <div id= "code">
+                        <h4>FIRST2023</h4>
+                        <p>15% discount on first purchase. Max 2000 discount</p>
+                    </div>
+                    <p>Enter Your promo code</p>
+                    <div id="promo_code">
+                        <input type="text">
+                        <button id="apply">Apply</button>
+                    </div>
+                    <h3>Total Cost</h3>
+                    <div id="item_cost">
+                        <p>Subtotal</p>
+                        <div id="ammount"></div>
+                        <p>To be paid</p>
+                        <div id="total_price"></div>
+                    </div>
+                    <button id="btn">Place Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
