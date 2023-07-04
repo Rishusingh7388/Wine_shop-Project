@@ -13,53 +13,102 @@
 
    </div> 
 
+
+
+
+   <div id="above-div">
+
+    <div id="category-1">
+      <h2>White Wine</h2>
+    </div>
+
+    <div id="category-2">
+      <h2>Red Wine</h2>
+    </div>
+
+    <div id="category-3">
+      <h2>Rose Wine</h2>
+    </div>
+
+    <div id="category-4">
+      <h2>Mixed</h2>
+    </div>
+
+
+
+ </div>
+
+
    <div id="container"> 
 
+
       <div id="sideDiv">
-            
+
+
+       <div>
         <select  id="select-price" onchange = "sortByPrice()" >
           <option value="">Sort By: Price</option>
           <option value="htl">High to Low</option>
           <option value="lth">Low to High</option>
         </select>
+       </div>     
+      
+    <div>
+      <select  id="select-country" onchange="filterbyCountry()">
+        <option value="">By country</option>
+        <option value="">All</option>
+        <option value="South Africa">South Africa</option>
+        <option value="Italy">Italy</option>
+        <option value="India">India</option>
+        <option value="France">France</option>
 
-        <select  id="select-name" onchange="sortByNames()">
-          <option value="">Country</option>
-          <option value="ascending">Ascending</option>
-          <option value="descending">Descending</option>
-        </select>
-
-        <select  id="discount" onchange="filterbyDiscount()">
-          <option value="">Filter By: Discount</option>
-          <option value="30% OFF">30% OFF</option>
-          <option value="25% OFF">25% OFF</option>
       </select>
+    </div>
+        
+       <div>
+         <select  id="discount" onchange="filterbyDiscount()">
+            <option value="">Discount</option>
+            <option value="30">30% OFF</option>
+            <option value="55">55% OFF</option>
+            <option value="75">75% OFF</option>
 
+         </select>
+       </div>
+       
+     <div>
       <select  id="brand">
         <option value="">Category</option>
         <option value="">Beardo</option>
         <option value="">Versace</option>
     </select>
+     </div>
+     
 
-    
-    <select  id="brand">
-      <option value="">Collections</option>
-      <option value="">Beardo</option>
-      <option value="">Versace</option>
-    </select>
+    <div>
+      <select  id="brand">
+        <option value="">Collections</option>
+        <option value="">Beardo</option>
+        <option value="">Versace</option>
+      </select>
+    </div>
+  
 
-    
-    <select  id="brand">
-      <option value="">Pack Size</option>
-      <option value="">Beardo</option>
-      <option value="">Versace</option>
-    </select>
-
+    <div>
+      <select  id="brand">
+        <option value="">Pack Size</option>
+        <option value="">Beardo</option>
+        <option value="">Versace</option>
+      </select>
+    </div>
+   
+   <div>
     <select  id="brand">
       <option value="">Bottle price</option>
       <option value="">Beardo</option>
       <option value="">Versace</option>
     </select>
+   </div>
+   
 
  
 
@@ -72,6 +121,14 @@
      
       
    </div>
+
+   <!-- //pagination buttons -->
+   <!-- <div id="button">
+      <h2 id="page"></h2>
+      <button id="prev">Previous</button>
+      <button id="next">Next</button>
+   </div> -->
+
      
 
   <div id="footer">

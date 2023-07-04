@@ -1,28 +1,44 @@
+let totalpages;
 
+let fetchedData;
 let url = "http://localhost:3000/vines"
 getWineData()
-async function getWineData(){
-  try{
+async function getWineData() {
+    try {
+      let response = await fetch(url);
+      let data = await response.json();
 
-    let response = await fetch(url)
-    let data = await response.json()
-    console.log(data)
-    displayWines(data)
-
-
-
+      let totalItems = response.headers.get("X-Total-Count"); // Retrieve the header after response.json()
+      console.log(totalItems);
+      fetchedData = data;
+  
+      console.log(data);
+      displayWines(data);
+    } catch (err) {
+      console.log(err);
+    }
   }
-  catch(err){
-    console.log(err)
-  }
-}
+  
+// async function getWineData(){
+//   try{
+
+//     let response = await fetch(url)
+//     let data = await response.json()
+//     let totalItems = response.headers.get("X-Total-Count")
+//     console.log(totalItems)
+//     fetchedData = data;
+   
+//     console.log(data)
+//     displayWines(data)
 
 
 
-
-
-
-
+//   }
+//   catch(err){
+//     console.log(err)
+//   }
+// }
+console.log(totalpages)
 
 
 
@@ -55,7 +71,6 @@ function displayWines(data){
         })
 
 
-
         let desc = document.createElement("p")
         desc.textContent = elem.name
         desc.setAttribute("id", "desc")
@@ -69,7 +84,6 @@ function displayWines(data){
         
         concg.append(country, category)
        
-
 
         let pc_Div = document.createElement("div")
         pc_Div.setAttribute("id", "pcDiv")
@@ -90,26 +104,7 @@ function displayWines(data){
         })
         pBtn.append(button)
 
-       
-
         pc_Div.append(price, pBtn)
-
-        // let rating = document.createElement("p")
-        // rating.textContent = elem.rating
-        // rating.setAttribute("id", "rating")
-       
-        // let btnDiv = document.createElement("div")
-        // btnDiv.setAttribute("id", "btnDiv")
-        
-        // let anc = document.createElement("a")
-        
-       
-    
-
-        // let icon = document.createElement("i")
-        // icon.setAttribute("class", "fa-regular  fa-heart");
-
-        // btnDiv.append(icon, button)
 
        div.append(offDiv,anchor, desc, concg,  pc_Div)
        
@@ -118,3 +113,158 @@ function displayWines(data){
 
     })
 }
+
+//set to cart func
+var cartData = JSON.parse(localStorage.getItem("cart-product")) || []
+function setTocart(elem){
+    console.log("hi")
+  cartData.push(elem)
+  localStorage.setItem("cart-product", JSON.stringify(cartData))
+
+} 
+
+function  gotoProDesc(elem){
+    localStorage.setItem("desc", JSON.stringify(elem))
+ }
+
+
+
+
+function sortByPrice() {
+    var value = document.getElementById("select-price").value;
+
+    if (value === "htl") {
+    var sorted = fetchedData.sort((a, b) => {
+        return b.price - a.price;
+    })
+    console.log(sorted);
+    }
+
+    if (value === "lth") {
+    var sorted = fetchedData.sort((a, b) => {
+        return a.price - b.price;
+    })
+    
+    }
+
+    displayWines(sorted);
+
+}
+
+
+
+//filter by country
+
+function filterbyCountry(){
+    
+    var country = document.getElementById("select-country").value
+    var filteredVal = fetchedData.filter((elem)=>{
+          if(country === ""){
+              return true
+          }
+          else{
+              return country === elem.country
+          }
+      })
+      displayWines(filteredVal)
+
+}
+
+//filter by discount
+function filterbyDiscount(){
+    var discount = document.getElementById("discount").value
+    
+    var filteredVal = fetchedData.filter((elem)=>{
+          if(discount === ""){
+              return true
+          }
+          else{
+              return parseInt(discount) === elem.off
+          }
+      })
+      displayWines(filteredVal)
+
+}
+
+//filter by category_1
+function filterbyCategory_1(){
+    var category_1 = document.querySelector("#category-1 h2").textContent;
+    // var category_2 = document.querySelector("#category-2 h2").textContent;
+    // var category_3 = document.querySelector("#category-3 h2").textContent;
+
+
+    console.log(category_1)
+    // console.log(category_2)
+
+    
+    var filteredVal = fetchedData.filter((elem)=>{
+          if(category_1  === ""){
+              return true
+          }
+          else{
+              return category_1 === elem.category
+          }
+
+
+      })
+      displayWines(filteredVal)
+
+}
+
+
+//filter by category_2
+function filterbyCategory_2(){
+    var category_2 = document.querySelector("#category-2 h2").textContent;
+  
+    var filteredVal = fetchedData.filter((elem)=>{
+          if(category_2  === ""){
+              return true
+          }
+          else{
+              return category_2 === elem.category
+          }
+
+
+      })
+      displayWines(filteredVal)
+
+}
+
+//filter for category 3
+function filterbyCategory_3(){
+    var category_3 = document.querySelector("#category-3 h2").textContent;
+
+    var filteredVal = fetchedData.filter((elem)=>{
+          if(category_3  === ""){
+              return true
+          }
+          else{
+              return category_3 === elem.category
+          }
+
+
+      })
+      displayWines(filteredVal)
+
+}
+
+
+//
+document.getElementById("category-1").addEventListener("click", ()=>{
+    filterbyCategory_1()
+})
+
+document.getElementById("category-2").addEventListener("click", ()=>{
+    filterbyCategory_2()
+})
+
+document.getElementById("category-3").addEventListener("click", ()=>{
+    filterbyCategory_3()
+})
+
+
+
+//pagination
+// ?_page=7&_limit=20
+
+
