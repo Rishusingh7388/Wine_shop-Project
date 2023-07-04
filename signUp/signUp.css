@@ -1,0 +1,55 @@
+#signup-box {
+    text-align: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 30%;
+    height: 80%;
+    /* margin: 10px; */
+    padding: 20px;
+    margin-left: 33%;
+    margin-top: 5%;
+    background-color: white;
+}
+
+#main {
+    background-image: url('https://images.pexels.com/photos/2912108/pexels-photo-2912108.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    position: relative;
+    width: 100%;
+}
+
+.input-fields {
+    margin-top: 10px;
+    border: none;
+    border-bottom: 1px solid rgb(155, 153, 153);
+    padding: 7px;
+}
+
+.input-fields:focus {
+    outline: none !important;
+    border-bottom: 2px solid purple;
+}
+
+.input-box {
+    display: grid;
+}
+
+.input-box>div {
+    text-align: left;
+    margin-top: 30px;
+}
+
+#signup-btn {
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    color: purple;
+    border: 1px solid purple;
+    margin-top: 25px;
+    padding: 10px;
+}
+
+#goto-signIn-page {
+    display: flex;
+    justify-content: space-between;
+    font-size: large;
+    color: purple;
+}

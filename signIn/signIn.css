@@ -1,0 +1,46 @@
+.input-fields {
+    margin-top: 10px;
+    border: none;
+    border-bottom: 1px solid rgb(155, 153, 153);
+    padding: 7px;
+    width: 100%;
+}
+
+.input-fields:focus {
+    outline: none !important;
+    border-bottom: 2px solid purple;
+}
+
+#signIn-box {
+    text-align: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 30%;
+    height: 80%;
+    /* margin: 10px; */
+    padding: 30px;
+    margin-left: 33%;
+    margin-top: 5%;
+    background-color: white;
+}
+
+.input-box>div {
+    text-align: left;
+    margin-top: 30px;
+}
+
+#login-btn {
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    color: purple;
+    border: 1px solid purple;
+    margin-top: 25px;
+    padding: 10px;
+}
+
+#goto-signUp-page {
+    display: flex;
+    justify-content: space-between;
+    font-size: large;
+    color: purple;
+}

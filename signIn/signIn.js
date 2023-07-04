@@ -1,9 +1,7 @@
 // Import the functions you need from the SDKs you need
-
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -21,29 +19,24 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 console.log(app);
+
 const auth = getAuth();
 
-
-document.getElementById("register-btn").addEventListener("click", function() {
+document.getElementById("login-btn").addEventListener("click", function() {
 
     let email = document.getElementById("email-input").value;
     let password = document.getElementById("password-input").value;
-    // let name = document.getElementById("name-input").value;
-    // let number = document.getElementById("mobile-input").value;
 
-
-    createUserWithEmailAndPassword(auth, email, password)
+    signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
-            console.log(user);
-            window.location.href = "../signIn/signUp.html";
+            alert("Sign In Successfully !!");
             // ...
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log(errorMessage);
-            // ..
         });
 })

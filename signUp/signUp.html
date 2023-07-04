@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIgn Up</title>
+    <link rel="stylesheet" href="./signUp.css">
+    <script src="https://kit.fontawesome.com/17cb428520.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -14,32 +16,50 @@
 <div id="navbar"></div>
 
 <div id="main">
+    <!-- <img src="https://images.pexels.com/photos/2912108/pexels-photo-2912108.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="wine-images"> -->
+    <!-- <p>Home</p> -->
     <div id="signup-box">
 
         <h1 id="heading"> Sign Up</h1>
 
-        <form action="" id="registration">
-            <div id="signup-body">
-                <div id="name">
-                    <label for="">Full Name</label>
-                    <input type="text" name="" id="name-input">
-                </div>
-                <div id="email">
-                    <label for="">Email</label>
-                    <input type="text" name="" id="email-input">
-                </div>
-                <div id="mobile">
-                    <label for="">Mobile Number</label>
-                    <input type="text" name="" id="mobile-input">
-                </div>
-                <div id="password">
-                    <label for="">Enter Password</label>
-                    <input type="password" name="" id="password-input">
-                </div>
-                <button type="button" id="register-btn"> Sign Up</button>
-            </div>
 
-        </form>
+        <div id="signup-body">
+            <form action="" id="registration">
+                <div id="name" class="input-box">
+                    <div>
+                        <i class="fa-solid fa-circle-user"></i>
+                        <label for="">Full Name</label>
+                    </div>
+                    <input type="text" name="" id="name-input" class="input-fields">
+                </div>
+                <div id="email" class="input-box">
+                    <div>
+                        <i class="fa-solid fa-envelope"></i>
+                        <label for="">Email</label>
+                    </div>
+                    <input type="text" name="" id="email-input" class="input-fields">
+                </div>
+                <div id="mobile" class="input-box">
+                    <div>
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        <label for="">Mobile Number</label>
+                    </div>
+                    <input type="text" name="" id="mobile-input" class="input-fields">
+                </div>
+                <div id="password" class="input-box">
+                    <div>
+                        <i class="fa-solid fa-key"></i>
+                        <label for="">Enter Password</label>
+                    </div>
+                    <input type="password" name="" id="password-input" class="input-fields">
+                </div>
+                <button type="button" id="signup-btn"> Sign Up</button>
+                <div id="goto-signIn-page">
+                    <p>Already signed up?</p>
+                    <p>Sign in now!</p>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
