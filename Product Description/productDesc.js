@@ -1,4 +1,4 @@
-let ID = 7;
+let ID = 25;
 let response = async ()=>{
     try{
         let result = await fetch(`http://localhost:3000/vines/${ID}`);
@@ -59,3 +59,7 @@ cart_btn.addEventListener("click",()=>{
     cart_arr.push(obj);
     localStorage.setItem("cart",JSON.stringify(cart_arr));
 })
+
+// let footer = document.querySelector("footer");
+// import foo from "../footer/footer.js";
+// footer.innerHTML=foo;
