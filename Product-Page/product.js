@@ -1,24 +1,28 @@
-let totalpages;
 
+let limit=9;
+let totalpages;
+let pageNum=1;
 let fetchedData;
-let url = "http://localhost:3000/vines"
+
+let url = `http://localhost:3000/vines`
+
 getWineData()
 async function getWineData() {
     try {
       let response = await fetch(url);
       let data = await response.json();
-
-      let totalItems = response.headers.get("X-Total-Count"); // Retrieve the header after response.json()
-      console.log(totalItems);
       fetchedData = data;
   
       console.log(data);
-      displayWines(data);
+    //   displayWines(data);
+      getWinesPagination(pageNum)
     } catch (err) {
       console.log(err);
     }
   }
-  
+
+  console.log(totalpages)
+
 // async function getWineData(){
 //   try{
 
@@ -263,8 +267,66 @@ document.getElementById("category-3").addEventListener("click", ()=>{
 })
 
 
+// pagination
 
-//pagination
-// ?_page=7&_limit=20
+ 
+    
+getWinesPagination(pageNum)
+
+async function getWinesPagination(pageNum){
+     if(pageNum == 1){
+            prev.disabled = true
+        }
+        else{
+            prev.disabled = false
+        }
+
+        if(pageNum === totalpages){
+            next.disabled = true
+        }
+        else{
+            next.disabled = false
+        }
+    try{
+      
+        let res = await fetch(`http://localhost:3000/vines?_page=${pageNum}&_limit=9`)
+        let data2 = await res.json()
+        console.log(data2)
+        let totalItems = res.headers.get("X-Total-Count"); // Retrieve the header after response.json()
+        totalpages = totalItems/limit
+        console.log(totalpages)
+        console.log(totalItems);
+        document.getElementById("page").innerHTML = "Page No:  " +pageNum
+        // display(data.data)
+        displayWines(data2)
+       
+    }catch(err){
+        console.log(err)
+    }
+}
+
+////////////
+let prev = document.getElementById("prev")
+let next = document.getElementById("next")
+
+prev.addEventListener("click", ()=>{
+    if(pageNum==1){
+        return
+    }
+    pageNum--
+    getWinesPagination(pageNum)
+})
+
+
+next.addEventListener("click", ()=>{
+    if(pageNum == totalpages){
+        return
+    }
+    pageNum++
+    getWinesPagination(pageNum)
+})
+///////////
+
+
 
 

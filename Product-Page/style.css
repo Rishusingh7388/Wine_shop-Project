@@ -1,7 +1,7 @@
 *{
     padding: 0;
     margin: 0;
-    /* background-color: rgb(255, 227, 232); */
+    font-family: 'Nunito', sans-serif;
 }
 
 #container{
@@ -20,6 +20,8 @@
 
     position: fixed;
     top: 0;
+    top: -148px;
+
     left: 125px;
 }
 /* #category{
@@ -37,9 +39,9 @@
 #category-1{
     border: 1px solid rgb(147, 34, 34);
     border-radius: 30px;
-    width: 60%;
+    width: 28%;
     margin-right: 10px;
-    height: 38px;
+    height: 32px;
     color: #000000;
     text-align: -webkit-center;
     margin-top: 16%;
@@ -55,9 +57,9 @@
 #category-2{
     border: 1px solid black;
     border-radius: 30px;
-    width: 60%;
+    width: 28%;
     margin-right: 10px;
-    height: 38px;
+    height: 32px;
     color: #000000;
     text-align: -webkit-center;
     margin-top: 16%;
@@ -73,9 +75,9 @@
 #category-3{
     border: 1px solid black;
     border-radius: 30px;
-    width: 60%;
+    width: 28%;
     margin-right: 10px;
-    height: 38px;
+    height: 32px;
     color: #000000;
     text-align: -webkit-center;
     margin-top: 16%;
@@ -93,9 +95,9 @@
 #category-4{
     border: 1px solid black;
     border-radius: 30px;
-    width: 60%;
+    width: 28%;
     margin-right: 10px;
-    height: 38px;
+    height: 32px;
     color: #000000;
     text-align: -webkit-center;
     margin-top: 16%;
@@ -113,10 +115,11 @@
 #sideDiv {
     display: flex;
     flex-direction: column;
-    margin-top: 20%;
+    margin-top: 15%;
     margin-right: 5%;
     position: fixed;
-    top: -38px;
+    top: -126px;
+    /* top: -38px; */
     left: 103px;
     width: 25%;
 }
@@ -126,7 +129,8 @@
 
 #product-div{
   width: 80%;
-  margin-top: 23%;
+  /* margin-top: 23%; */
+  margin-top: 8%;
   display: grid;
   margin-left: 33%;
   grid-template-columns: repeat(3, 1fr);
@@ -260,3 +264,35 @@
     /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
     margin: 0px 0;
 }
+#button{
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    margin-bottom: 10px;
+    margin: auto;
+    margin-bottom: 9%;
+}
+
+#prev{
+    padding: 10px;
+    font-weight: 600;
+    background-color: #fc575a;
+    color: white;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border: none;
+
+}
+
+#next{
+    padding: 10px;
+    font-weight: 600;
+    background-color: #fc575a;
+    color: white;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border: none;
+   
+}
+
+
