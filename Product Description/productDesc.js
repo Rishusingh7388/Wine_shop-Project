@@ -1,14 +1,9 @@
-let name = document.getElementById("name_of_vine");
-let category = document.getElementById("category_of_vine");
-let country = document.getElementById("country_of_vine");
-let price = document.getElementById("price_of_vine");
-let ID = 2;
-
+let ID = 7;
 let response = async ()=>{
     try{
         let result = await fetch(`http://localhost:3000/vines/${ID}`);
         let data = await result.json();
-        console.log(data);
+        showData(data);
     }
     catch(error){
         console.log(error);
@@ -16,6 +11,18 @@ let response = async ()=>{
 }
 response();
 
+let showData = (data)=>{
+    let name = document.getElementById("name_of_vine");
+    let category = document.getElementById("category_of_vine");
+    let country = document.getElementById("country_of_vine");
+    let price = document.getElementById("price_of_vine");
+    let img = document.getElementById("img_of_vine");
+    name.textContent=data.name;
+    category.textContent=data.category;
+    country.textContent=data.country;
+    price.textContent=data.price;
+    img.src=data.img_url;
+}
 
 let cartcount = document.getElementById("cart_count");
 let cart_minus = document.getElementById("cart_minus");
@@ -41,4 +48,10 @@ cart_minus.addEventListener("click",()=>{
 cart_plus.addEventListener("click",()=>{
     cart_count++;
         cartcount.textContent=cart_count;
+})
+
+let cart_btn = document.getElementById("Add_to_cart_btn");
+cart_btn.addEventListener("click",()=>{
+    localStorage.setItem("id",ID);
+    localStorage.setItem("Count",cart_count);
 })
