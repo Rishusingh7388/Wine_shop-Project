@@ -270,7 +270,8 @@ document.getElementById("category-3").addEventListener("click", ()=>{
 // pagination
 
  
-    
+let prev = document.getElementById("prev")
+let next = document.getElementById("next")    
 getWinesPagination(pageNum)
 
 async function getWinesPagination(pageNum){
@@ -306,8 +307,7 @@ async function getWinesPagination(pageNum){
 }
 
 ////////////
-let prev = document.getElementById("prev")
-let next = document.getElementById("next")
+
 
 prev.addEventListener("click", ()=>{
     if(pageNum==1){
@@ -326,6 +326,41 @@ next.addEventListener("click", ()=>{
     getWinesPagination(pageNum)
 })
 ///////////
+
+
+
+
+
+
+// fetchwithSearch(search)
+
+async function fetchwithSearch(search){
+   
+    
+    try{
+      
+        let resp = await fetch(`http://localhost:3000/vines?q=${search}`)
+        let data2 = await resp.json()
+        console.log(data2)
+        displayWines(data2)
+       
+    }catch(err){
+        console.log(err)
+    }
+}
+
+
+function mySearch(){
+    let search = document.getElementById("search-inp").value
+    console.log("yayy")
+    fetchwithSearch(search)
+}
+
+
+document.getElementById("search-inp").addEventListener("click", ()=>{
+    // document.getElementById("search-inp").style.border = "none"
+})
+
 
 
 

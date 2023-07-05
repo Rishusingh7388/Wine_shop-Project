@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     font-family: 'Nunito', sans-serif;
+    /* background-color: lightcoral; */
 }
 
 #container{
@@ -11,19 +12,49 @@
     margin: auto;
     
 }
+#search-div{
+    display: flex;
+    width: 32%;
+    margin: 33px;
+    margin-left: 85px;
+    position: fixed;
+   
+
+}
+
+#search-inp:focus {
+    outline: none;
+
+  }
+  
+
+
+
+#icon img{
+    width: 50px;
+    margin-top: 15px;
+}
+#inp-div input{
+    padding: 16px;
+    border: none;
+    font-size: 37px;
+    font-weight: 600;
+    border-bottom: 3px solid green;
+}
 
 #above-div{
     display: flex;
     width: 80%;
     justify-content: space-evenly;
     margin: auto;
-
+     height: 20px;
     position: fixed;
     top: 0;
-    top: -148px;
+    top: -42px;
 
     left: 125px;
 }
+
 /* #category{
     border: 1px solid black;
     border-radius: 30px;
@@ -115,7 +146,7 @@
 #sideDiv {
     display: flex;
     flex-direction: column;
-    margin-top: 15%;
+    margin-top: 23%;
     margin-right: 5%;
     position: fixed;
     top: -126px;
@@ -130,7 +161,7 @@
 #product-div{
   width: 80%;
   /* margin-top: 23%; */
-  margin-top: 8%;
+  margin-top: 19%;
   display: grid;
   margin-left: 33%;
   grid-template-columns: repeat(3, 1fr);
