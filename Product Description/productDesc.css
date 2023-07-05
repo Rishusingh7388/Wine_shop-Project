@@ -8,6 +8,13 @@ body{
     background-color: #fff8e9;
     font-family: 'Poppins', sans-serif;
 }
+#first + p{
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 30px;
+    color: cornflowerblue;
+}
 #first{
     display: flex;
     width: 90%;
@@ -52,12 +59,13 @@ body{
 }
 #buttons > div > button{
     padding: 10px 10px 10px 20px;
+
 }
 #buttons > div:nth-child(2) > button{
     padding: 10px 80px;
 }
 button{
-    background-color:#bf0d12;
+    background-color: #b62e32;
     border: none;
     color: rgb(255, 255, 255);
     text-align: center;
@@ -66,7 +74,18 @@ button{
     cursor: pointer;
     border-radius: 3px;
     transition: all 0.3s;
+    font-size: 18px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+#buttons + div{
+    margin-top: 20px;
+}
+#Buy_now_btn{
+    padding: 10px 198px;
+    align-items: center;
+}
+button:hover{
+    background-color: #940a0e;
 }
 #contents{
     width: 90%;
@@ -99,5 +118,97 @@ button{
     font-weight: 600;
 }
 #second{
-  display: flex;  
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
 }
+#second > div{
+    width: 22%;
+    border: 1px solid gray;
+    padding: 10px;
+    cursor: pointer;
+}
+#second > div > div{
+    margin-bottom: 20px;
+}
+#second > div > div:first-child{
+    width: 50%;
+    margin: auto;
+}
+#second > div > div:first-child > img{
+    width: 100%;
+    mix-blend-mode: darken;
+}
+#second > div > div:nth-child(2){
+    /* text-align: center; */
+    font-size: 20px;
+    font-weight: 600;
+    color: #b43d41;
+}
+#second > div > div:nth-child(3){
+    /* width: 90%;
+    margin: auto; */
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    align-items: center;
+}
+#second > div > div:nth-child(3) > p:nth-child(2){
+    font-size: 25px;
+    font-weight: 600;
+}
+.recc_cart_btn{
+    display: block;
+    margin: auto;
+    padding: 10px 60px;
+}
+@media only screen and (max-width: 600px) {
+    #first{
+        flex-direction: column;
+    }
+    #first > div:first-child{
+        width: 50%;
+        margin: auto;
+    }
+    #first > div:first-child > img{
+        width: 100%;
+    }
+    #first > div:first-child{
+        border-right: none;
+    }
+    #description{
+        margin-top: 15px;
+        margin-left: 10px;
+    }
+    #buttons{
+        flex-direction: column;
+        margin: auto;
+        margin-top: 10px;
+    }
+    #buttons > div{
+        margin: auto;
+    }
+    #buttons + div{
+        margin-left: 30px;
+    }
+    #Buy_now_btn{
+        padding: 10px 102px;
+        align-items: center;
+    }
+    #contents{
+        grid-template-columns: repeat(1,1fr);
+    }
+    #test > p{
+        line-height: 20px;
+    }
+    #second{
+        flex-direction: column;
+        gap: 20px;
+    }
+    #second > div{
+        width: 90%;
+    }
+  }
