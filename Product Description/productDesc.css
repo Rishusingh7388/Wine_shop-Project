@@ -37,11 +37,12 @@ body{
 }
 #description > h3{
     margin-top: 20px;
+    font-weight: 200;
 }#description > h3:nth-child(4){
     font-size: 30px;
 }
 #description > h3 > span{
-    font-weight: 200;
+    font-weight: 600;
 }
 #buttons{
     display: flex;
