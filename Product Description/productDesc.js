@@ -49,9 +49,13 @@ cart_plus.addEventListener("click",()=>{
     cart_count++;
         cartcount.textContent=cart_count;
 })
-
+let cart_arr = [];
 let cart_btn = document.getElementById("Add_to_cart_btn");
 cart_btn.addEventListener("click",()=>{
-    localStorage.setItem("id",ID);
-    localStorage.setItem("Count",cart_count);
+    let obj = {
+        id:ID,
+        count:cart_count
+    }
+    cart_arr.push(obj);
+    localStorage.setItem("cart",JSON.stringify(cart_arr));
 })
