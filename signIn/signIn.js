@@ -32,6 +32,7 @@ document.getElementById("login-btn").addEventListener("click", function() {
             // Signed in 
             const user = userCredential.user;
             alert("Sign In Successfully !!");
+            document.getElementById("signOut").style.display = "block";
             // ...
         })
         .catch((error) => {

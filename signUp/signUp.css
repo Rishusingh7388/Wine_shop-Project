@@ -10,7 +10,7 @@
     background-color: white;
 }
 
-#main {
+body {
     background-image: url('https://images.pexels.com/photos/2912108/pexels-photo-2912108.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
     position: relative;
     width: 100%;
@@ -52,4 +52,14 @@
     justify-content: space-between;
     font-size: large;
     color: purple;
+}
+
+#googleLogin {
+    background-color: white;
+    border: 1px solid crimson;
+    margin: 0px 150px;
+}
+
+#googleLogin>img {
+    width: 100%;
 }

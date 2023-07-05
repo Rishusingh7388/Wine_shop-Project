@@ -3,7 +3,11 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+import { signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 
+// import { GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+
+const provider = new GoogleAuthProvider();
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -20,30 +24,76 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-console.log(app);
+// console.log(app);
 const auth = getAuth();
 
+// let userArr = JSON.parse(localStorage.getItem("user_details")) || [];
 
-document.getElementById("register-btn").addEventListener("click", function() {
+let userArr = JSON.parse(localStorage.getItem("user_details")) || [];
+
+document.getElementById("signup-btn").addEventListener("click", function() {
 
     let email = document.getElementById("email-input").value;
     let password = document.getElementById("password-input").value;
-    // let name = document.getElementById("name-input").value;
-    // let number = document.getElementById("mobile-input").value;
+    let name = document.getElementById("name-input").value;
+    let number = document.getElementById("mobile-input").value;
 
 
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
-            console.log(user);
-            window.location.href = "../signIn/signUp.html";
+            user.displayName = name;
+            user.phoneNumber = number;
+            // console.log(user);
+            alert("Sign up successfully!");
+
+            //adding data in local storage
+            userArr.push({
+                name: user.displayName,
+                number: user.phoneNumber,
+                email: user.email,
+            });
+            // console.log(userArr);
+            localStorage.setItem("user_details", JSON.stringify(userArr));
+            window.location.href = "../signIn/signIn.html";
             // ...
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log(errorMessage);
-            // ..
+            alert("Error !!")
+                // ..
+        });
+})
+
+document.getElementById("googleLogin").addEventListener("click", function() {
+
+    signInWithPopup(auth, provider)
+        .then((result) => {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
+            // The signed-in user info.
+            const user = result.user;
+            console.log(user);
+            userArr.push({
+                name: user.displayName,
+                email: user.email,
+            });
+
+            localStorage.setItem("user_details", JSON.stringify(userArr));
+            // IdP data available using getAdditionalUserInfo(result)
+            // ...
+        }).catch((error) => {
+            // Handle Errors here.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // The email of the user's account used.
+            const email = error.customData.email;
+            // The AuthCredential type that was used.
+            const credential = GoogleAuthProvider.credentialFromError(error);
+            // ...
         });
 })
