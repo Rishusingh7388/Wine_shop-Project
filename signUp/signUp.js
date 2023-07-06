@@ -37,6 +37,9 @@ document.getElementById("signup-btn").addEventListener("click", function() {
     let password = document.getElementById("password-input").value;
     let name = document.getElementById("name-input").value;
     let number = document.getElementById("mobile-input").value;
+    // if (number.length != 10) {
+    //     alert("Mobile number should be correct");
+    // }
 
 
     createUserWithEmailAndPassword(auth, email, password)
@@ -51,7 +54,6 @@ document.getElementById("signup-btn").addEventListener("click", function() {
             //adding data in local storage
             userArr.push({
                 name: user.displayName,
-                number: user.phoneNumber,
                 email: user.email,
             });
             // console.log(userArr);
@@ -62,9 +64,32 @@ document.getElementById("signup-btn").addEventListener("click", function() {
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            console.log(errorMessage);
-            alert("Error !!")
-                // ..
+            console.log(errorMessage)
+
+            if (number.length != 10) {
+                alert("Please enter valid mobile number !!");
+            }
+
+
+            // console.log(errorMessage);
+            if (errorCode == "auth/invalid-email") {
+                alert("Please enter valid email !!")
+            }
+            if (errorCode == "auth/invalid-password") {
+                alert("Please enter valid password !!")
+            }
+            if (errorCode == "auth/missing-email") {
+                alert("Please enter valid email !!")
+            }
+            if (errorCode == "auth/missing-password") {
+                alert("Please enter valid password !!")
+            }
+            if (errorCode == "auth/weak-password") {
+                alert("Password must contain atleast 6 characters!!")
+            } else {
+                alert("Please enter valid email and password !!")
+            }
+
         });
 })
 
@@ -76,6 +101,10 @@ document.getElementById("googleLogin").addEventListener("click", function() {
             const credential = GoogleAuthProvider.credentialFromResult(result);
             const token = credential.accessToken;
             // The signed-in user info.
+
+            alert("Sign up successfully!");
+            window.location.href = "../signIn/signIn.html";
+
             const user = result.user;
             console.log(user);
             userArr.push({
@@ -85,6 +114,7 @@ document.getElementById("googleLogin").addEventListener("click", function() {
 
             localStorage.setItem("user_details", JSON.stringify(userArr));
             // IdP data available using getAdditionalUserInfo(result)
+
             // ...
         }).catch((error) => {
             // Handle Errors here.
@@ -94,6 +124,9 @@ document.getElementById("googleLogin").addEventListener("click", function() {
             const email = error.customData.email;
             // The AuthCredential type that was used.
             const credential = GoogleAuthProvider.credentialFromError(error);
+
+            console.log(errorCode);
+            alert("Already resgistered emal !!");
             // ...
         });
 })
