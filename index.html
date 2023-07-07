@@ -17,7 +17,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="./Components/navbar.css">
+    <!-- <link rel="stylesheet" href="./Components/navbar.css"> -->
     <link rel="stylesheet" href="./Components/footer.css">
 </head>
 <body>
@@ -50,8 +50,38 @@
 
 
     <!-- navbar start -->
-        <div id="nav_up">
+        <div id="nav_up"></div>
+        
+        <div id="main">
+            <div>
+                <p>Mine Wine</p>
+            </div>
+            <div>
+                    <ul class="menu">
+                      <li><a href="#">CATEGORY</a>
+                        <ul class="submenu">
+                          <li><a href="#">Red Wine</a></li>
+                          <li><a href="#">Rose Wine</a></li>
+                          <li><a href="#">White Wine</a></li>
+                          <li><a href="#">Sparkling Wine</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#">ABOUT US</a></li>
+                      <li><a href="#">SETS & GIFTS</a></li>
+                      <li><a href="#">PROMOTIONS</a></li>
+                    </ul>              
+                <input type="text" name="" id="navbar_inp" oninput="debounc(getdata,500)" placeholder="Type To Search....">
+            </div>
+            <div>
+                <button><i class="fa-solid fa-user"></i></button>
+                <button><i class="fa-solid fa-bag-shopping"></i></button>
+            </div>
+            <div id="hamburger">
+                <button><i class="fa-solid fa-bars"></i></button>
+            </div>
         </div>
+        <div id="debouncdata"></div>
+
     <!-- navbar ends -->
 
 <main>
@@ -230,4 +260,5 @@
 </html>
 
 <script type="module" src="main.js"></script>
-<script type="module" src="Components/navbar.js"></script>
+<!-- <script type="module" src="Components/navbar.js"></script> -->
+<script src="Components/navbar.js"></script>

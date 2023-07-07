@@ -35,7 +35,11 @@ let shownavbarData = (array)=>{
         let ul = document.createElement("ul");
     array.forEach(element => {
         let li = document.createElement("li");
-        li.innerHTML=`<a href="#">${element.name}</a>`
+        li.textContent=element.name;
+        li.addEventListener("click",()=>{
+            localStorage.setItem("ID",element.id);
+            location.href="productDesc.html";
+        })
         ul.append(li);
     });
     debouncedata.append(ul);
