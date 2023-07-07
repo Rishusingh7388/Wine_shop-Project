@@ -17,94 +17,114 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./Components/navbar.css">
+    <link rel="stylesheet" href="./Components/footer.css">
 </head>
 <body>
-    <!-- navbar start -->
 
-        <div class="nav_up">
-            <div class="navbar"></div>
+    <!-- pop up starts-->
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div>
+                <p>Are You 21 Years Old ?</p>
+            </div>
+            <div id="btn">
+                <button id="model_yes" class="model_yes">YES</button>
+              <button id="model_no" class="model_no">NO</button>
+            </div>
         </div>
+      </div>
 
+      <div id="Modal" class="modal">
+        <div class="modal-content">
+            <div id="btn">
+                <button id="model_no" class="close"><i class="fa-solid fa-xmark"></i></button>
+              </div>
+            <div>
+                <p>Oops ! You Can,t Access The Website</div>
+        </div>
+      </div>
+
+    <!-- pop up ends -->
+
+
+    <!-- navbar start -->
+        <div id="nav_up">
+        </div>
     <!-- navbar ends -->
 
 <main>
 
     <h1 class="wineyard">Wines from the best vineyards</h1>
 
-    <!-- slideshow carousel -->
-<div class="body">
+    
+    <!-- slide carousel starts -->
+
+
     <div class="slider">
         <div class="slides">
-          <!--radio buttons start-->
-          <input type="radio" name="radio-btn" id="radio1" />
-          <input type="radio" name="radio-btn" id="radio2" />
-          <input type="radio" name="radio-btn" id="radio3" />
-          <!--radio buttons end-->
-
-          <!--slide images start-->
-        
-          
-            <div class="slide first">
-                <img src="images/bg.png" alt="">
-                <div class="info">
-                    <h1>DISCOVER OUR NEW ARRIVALS</h1>
-                    <p><a href="">Shop Now</a></p>
+          <div class="slide">
+            <img src="https://www.cascinacollina.com/wp-content/uploads/revslider/fullscreen-slider-1/DSC_9729-2-1024x682.jpg" alt="">
+            <div class="content">
+                <div>
+                <h1>DISCOVER OUR NEW ARRIVALS <br></h1>
+                <p>Unveiling the allure of our new wine arrivals, each brand a revelation of taste, taking you on an unforgettable journey of discovery. Indulge in the finest flavors that await, a testament to our dedication to excellence in every pour.</p>
+                <br><button class="shopnow">Shop Now</button>
                 </div>
             </div>
-            <div class="slide">
-                <img src="https://www.vmlwine.com/wp-content/uploads/2021/10/VML_Winery_home_vinum_wines_1280x826.jpg" alt="">
-                <div class="info">
-                    <h1>DISCOVER OUR NEW ARRIVALS</h1>
-                    <p>Shop Now</p>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="https://hips.hearstapps.com/hmg-prod/images/best-vineyards-in-kent-1597332948.jpg?crop=1.00xw:0.754xh;0,0.140xh&resize=1200:*" alt="">
-                <div class="info">
-                    <h1>DISCOVER OUR NEW ARRIVALS</h1>
-                    <p>Shop Now</p>
-                </div>
-            </div>
-          
-          <!--slide images end-->
-
-          <!--automatic navigation start-->
-          <div class="navigation-auto">
-            <div class="auto-btn1"></div>
-            <div class="auto-btn2"></div>
-            <div class="auto-btn3"></div>
           </div>
-        <!--automatic navigation end-->
-    </div>
-        <!--manual navigation start-->
-        <div class="navigation-manual">
-          <label for="radio1" class="manual-btn"></label>
-          <label for="radio2" class="manual-btn"></label>
-          <label for="radio3" class="manual-btn"></label>
+          <div class="slide">
+            <img src="https://media.istockphoto.com/id/640078294/photo/valentines-day-greeting-card.jpg?s=612x612&w=0&k=20&c=_Sd0umhkNA4IPVr_dRMltHhbRg4qiEIzI816VcBCt2U=" alt=" ">
+            <div class="content">
+                <div>
+                <h1>GIFT COLLECTION 2023 <br></h1>
+                <p>Step into a world of enchantment with our mesmerizing gift collection of 2023, where the artistry of wines unfolds in captivating elegance. Delight your senses and ignite the spirit of celebration with our curated selection, where every sip becomes a magical journey into the realm of fine wines.</p>
+                <br><button class="shopnow">Shop Now</button>
+                </div>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="https://stonefishinternational.com.au/wp-content/uploads/2016/03/Vineyard-Slider-Background.jpg" alt="">
+            <div class="content">
+                <div>
+                <h1>RUSTIC & ORGANIC <br></h1>
+                <p>Discover the pure essence of nature with our rustic and organic wines - a sip that takes you to vineyard landscapes, embracing authenticity and exquisite flavors. Indulge in the truest expression of earth's bounty with every glass.</p>
+                <br><br><button class="shopnow">Shop Now</button>
+                </div>
+            </div>
+          </div>
         </div>
-      
-      <!--manual navigation end-->
-    </div>
-</div>
-      <!--image slider end-->
-    <!-- slideshow carousel ends -->
+      </div>
+    
+      <div class="slider-controls">
+        <input type="radio" name="slider-radio" id="radio1" checked>
+        <label for="radio1"></label>
+        <input type="radio" name="slider-radio" id="radio2">
+        <label for="radio2"></label>
+        <input type="radio" name="slider-radio" id="radio3">
+        <label for="radio3"></label>
+      </div>
+
+    <!-- slider carousel ends -->
+
 
 <!-- what would you like -->
-<h5 class="heading">What Would you Like</h5>
+<h5 class="heading">What Would you Like ?</h5>
 
 <!-- images -->
 
 <div class="container1">
     <div class="prod first">
-        <img src="images/product/product-1.png" alt="Red">
-        <h5><a href="">white</a></h5>
-    </div>
-    <div class="prod">
-        <img src="images/product/product-2.png" alt="">
+        <img src="images/product/product-3.png" alt="Red">
         <h5><a href="">Red</a></h5>
     </div>
     <div class="prod">
-        <img src="images/product/product-3.png" alt="">
+        <img src="images/product/product-2.png" alt="">
+        <h5><a href="">White</a></h5>
+    </div>
+    <div class="prod">
+        <img src="images/product/product-1.png" alt="">
         <h5><a href="">Rose</a></h5>
     </div>
     <div class="prod">
@@ -116,21 +136,23 @@
 <h5 class="heading">Sets & Gifts</h5>
 <div class="container2">
     <div class="gift first">
-        <img src="https://m.media-amazon.com/images/I/718ti+v27VL._AC_UF350,350_QL80_.jpg" alt="Red">
+        <img src="https://m.media-amazon.com/images/I/718ti+v27VL._AC_UF350,350_QL80_.jpg" class="gifts" alt="Red">
         <h5><a href="">Wine Glasses</a></h5>
     </div>
     <div class="gift">
-        <img src="https://salut.co.uk/wp-content/uploads/2022/11/jpeg.-3-btl-Italian-red-scaled.jpg" alt="">
+        <img src="https://salut.co.uk/wp-content/uploads/2022/11/jpeg.-3-btl-Italian-red-scaled.jpg" alt="" class="gifts">
         <h5><a href="">Wine Sets</a></h5>
     </div>
     <div class="gift">
-        <img src="https://i.pinimg.com/originals/47/fd/05/47fd0550218bef0bbc3657aead388856.png" alt="">
+        <img src="https://i.pinimg.com/originals/47/fd/05/47fd0550218bef0bbc3657aead388856.png" alt="" class="gifts">
         <h5><a href="">Decanters</a></h5>
     </div>
 </div>
 <a href=""><button class="gift_button"> View All</button></a>
 
-<div class="container3">
+
+
+<div class="container4">
     <div class="subs1">
         <h1>Wine Subscription</h1>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
@@ -144,47 +166,68 @@
     </div>
 </div>
 
-<div class="container4">
-    <div class="help1">
-        <img src="https://www.namhpac.org/wp-content/uploads/2019/09/Red-Wine-201807-013.jpg" alt="">
+<div class="container3">
+    <div class="about1">
+        <img src="https://cdn.pixabay.com/photo/2014/12/02/03/11/grapes-553462_1280.jpg" alt="">
     </div>
-    <div class="help2">
-        <h1>Wine Subscription</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-            Porro numquam maiores molestiae eius optio. Similique officia 
-            repellendus voluptatum dicta sed rerum inventore dolor dolore facere, amet quisquam 
-            alias incidunt cumque.</p>
-        <button>More about Subscription</button>
+    <div class="about2">
+        <h1>About Us</h1>
+        <h4>Let's get acquainted !</h4>
+        <p>We are a group of wine enthusiasts who love everything about wine. from the vineyards to the bottle. Our passion for wine has taken us to different parts of the world, exploring different wineries and discovering unique flavors.
+
+            <span><br> <br></span>
+            We are not just wine sellers, we are wine lovers, and our mission is to help you discover and appreciate the beauty of wine. We believe that everyone can find their perfect bottle, whether you are a wine connoisseur or a novice. Our knowledgeable staff is always available to guide you in selecting the perfect wine for any occasion</p>
     </div>
 </div>
 
 
+<h5 class="heading">Blog and News</h5>
+
+<div class="container5">
+    <div><img src="https://assets.architecturaldigest.in/photos/600843631dd783c692024b58/master/w_1600%2Cc_limit/Sula-Wine.jpg" alt="">
+        <p>12/06/2023</p>
+        <h5>Enjoy a fun new way to get to know wine</h5></div>
+
+    <div><img src="https://www.framehazelpark.com/wp-content/uploads/2203FS03_frame-stories_pairing_1063-scaled.jpg" alt="">
+        <p>18/06/2023</p>
+        <h5> Wine and Oysters. A rule just waiting to be broken</h5></div>
+
+    <div><img src="https://cdn.britannica.com/55/123855-050-65B599D7/Moet-champagne-Chandon.jpg" alt="">
+        <p>23/6/2023</p>
+        <h5>A brief (troubled) history of champange</h5></div>
+
+    <div><img src="https://io.dropinblog.com/uploaded/blogs/34240221/files/featured/wine-for-people-who-dont-like-wine-feature.jpg" alt="">
+        <p>27/06/2023</p>
+        <h5>The Wines we have on our own table right now</h5></div>
+</div>
+<div class="container6">
+    <div>
+       
+        <img class="believe" src="images/wineslide12.png" alt="">
+            <div>
+                <h5>We believe that wine is more than just a drink. <span class="redfont"> It's an experience, a journey through the senses, an exploration of flavors and aromas </span> that captivate the palate and transport us to distant vineyards.</h5>
+            </div>
+
+           
+    </div>
+    
+</div>
+
+
+
+
+
 </main>
 
+<footer>
+   
+</footer>
 
 
 
 
 </body>
 </html>
-<script>
-var counter = 1;
-var slideInterval = 3000; // Adjust the speed of sliding (in milliseconds)
-var isFastTransition = false; // Set to true for a faster transition from the last slide to the first slide
 
-setInterval(function() {
-  document.getElementById('radio' + counter).checked = true;
-  counter++;
-  if (counter > 5) {
-    if (isFastTransition) {
-      counter = 1;
-      document.getElementById('radio' + counter).checked = true;
-      counter++;
-    }
-    else {
-      counter = 1;
-    }
-  }
-}, slideInterval);
-
-</script>
+<script type="module" src="main.js"></script>
+<script type="module" src="Components/navbar.js"></script>
