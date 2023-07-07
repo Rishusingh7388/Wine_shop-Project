@@ -102,15 +102,16 @@ document.getElementById("googleLogin").addEventListener("click", function() {
             const token = credential.accessToken;
             // The signed-in user info.
 
-            alert("Sign up successfully!");
-            window.location.href = "../signIn/signIn.html";
 
             const user = result.user;
-            console.log(user);
+            console.log(user.displayName);
             userArr.push({
                 name: user.displayName,
                 email: user.email,
             });
+            alert("Sign up successfully!");
+
+            window.location.href = "../signIn/signIn.html";
 
             localStorage.setItem("user_details", JSON.stringify(userArr));
             // IdP data available using getAdditionalUserInfo(result)
@@ -126,7 +127,11 @@ document.getElementById("googleLogin").addEventListener("click", function() {
             const credential = GoogleAuthProvider.credentialFromError(error);
 
             console.log(errorCode);
-            alert("Already resgistered emal !!");
+            alert("Already resgistered email !!");
             // ...
         });
+})
+
+document.getElementById("home").addEventListener("click", function() {
+    window.location.href = "../home"
 })

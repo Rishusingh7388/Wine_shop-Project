@@ -55,8 +55,10 @@ document.getElementById("googleLogin").addEventListener("click", function() {
             const user = result.user;
 
             alert("Sign in successfully!!");
-            // IdP data available using getAdditionalUserInfo(result)
-            // ...
+
+            window.location.href = "../home"
+                // IdP data available using getAdditionalUserInfo(result)
+                // ...
         }).catch((error) => {
             // Handle Errors here.
             const errorCode = error.code;
@@ -67,4 +69,8 @@ document.getElementById("googleLogin").addEventListener("click", function() {
             const credential = GoogleAuthProvider.credentialFromError(error);
             // ...
         });
+})
+
+document.getElementById("home").addEventListener("click", function() {
+    window.location.href = "../home"
 })
