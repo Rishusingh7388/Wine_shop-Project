@@ -1,3 +1,7 @@
+body{
+    font-family: 'Inconsolata', monospace;
+    background-color: rgb(247, 234, 229);
+}
 #navbar{
     height: 70px;
     display: flex;
@@ -43,34 +47,67 @@
 #order p{
     margin-top: 10%;
 }
-#homeBtn{
-    width: 20%;
-    margin-top: 2%;
-    margin-right: 20%;
-    height: 40px;
-    border: 1px solid purple;
-    background-color: white;
-    cursor: pointer;
-    color: purple;
-    border-radius: 20px;
-}
-#homeBtn:hover{
-    background-color: purple;
-    color: white;
+#congrats > h2{
+    color: red;
 }
 #orderDetail{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+#orderProduct{
+    width: 90%;
+}
+#productContainer{
+    display: flex;
+    /* border: 2px solid red; */
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
+    border-top: 1px solid gray;
+    margin-bottom: 3%;
+    height: 130px;
+}
+#productImg {
+    background-color: rgb(247, 234, 229);
+    mix-blend-mode: darken;
+}
+#div1{
+    display: grid;
+    width: 80%;
+    margin-left: 10%;
+}
+#div2{
     display: flex;
     justify-content: space-between;
 }
-#orderProduct{
-    width: 70%;
+#priceDiv{
+    display: flex;
+}
+#div3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+#repeat{
+    border: none;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    width: 100%;
+    cursor: pointer;
+}
+/* #total_cost{
+    display: flex;
+    justify-content: end;
+    margin-top: 10%;
 }
 #amount{
     display: flex;
     justify-content: end;
     margin-top: 5%;
-}
+} */
 #transaction{
+    margin-top: 3%;
     width: 25%;
 }
 #transaction h3{
@@ -82,4 +119,18 @@
 }
 #item_amount{
     margin-top: 7%;
+}
+@media only screen and (max-width: 500px) {
+    #navbar{
+        display: none;
+    }
+    #orderDetail{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+    }
+    #orderProduct{
+        width: 100%;
+    }
+
 }
