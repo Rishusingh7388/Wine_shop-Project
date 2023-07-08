@@ -1,4 +1,12 @@
 
+import Navbar from './component/nav.js'
+import foo from './component/footer.js'
+
+document.getElementById("navbar").innerHTML = Navbar()
+document.getElementById("footer").innerHTML = foo()
+
+
+
 let limit=9;
 let totalpages;
 let pageNum=1;
@@ -23,25 +31,6 @@ async function getWineData() {
 
   console.log(totalpages)
 
-// async function getWineData(){
-//   try{
-
-//     let response = await fetch(url)
-//     let data = await response.json()
-//     let totalItems = response.headers.get("X-Total-Count")
-//     console.log(totalItems)
-//     fetchedData = data;
-   
-//     console.log(data)
-//     displayWines(data)
-
-
-
-//   }
-//   catch(err){
-//     console.log(err)
-//   }
-// }
 console.log(totalpages)
 
 
@@ -362,6 +351,7 @@ document.getElementById("search-inp").addEventListener("click", ()=>{
 })
 
 
+// export {mySearch, filterbyCountry, filterbyDiscount}
 
 
 
