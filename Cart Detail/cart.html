@@ -8,11 +8,6 @@
 </head>
 <body>
     <div id="navbar">
-        <div id="winepark">
-            <a href="">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSefzhCq6ipa2az4jTuvlpHTnuAaHnoNSuNg&usqp=CAU" alt="">
-            </a>
-        </div>
         <div id="home">
             <a href=""><img src="https://cdn-icons-png.flaticon.com/128/25/25694.png" alt=""></a>
             <p>Home</p>
@@ -26,11 +21,11 @@
             <p>Sign in</p>
         </div>
         <div id="checkout">
-            <a href=""><img src="https://cdn-icons-png.flaticon.com/128/3082/3082383.png" alt=""></a>
+            <a href="./checkout.html"><img src="https://cdn-icons-png.flaticon.com/128/3082/3082383.png" alt=""></a>
             <p>Checkout & Payment</p>
         </div>
         <div id="payment">
-            <a href=""><img src="https://cdn-icons-png.flaticon.com/128/7204/7204809.png" alt=""></a>
+            <a href="../Wine_shop-Project/Thankyou Page/thankyou.html"><img src="https://cdn-icons-png.flaticon.com/128/7204/7204809.png" alt=""></a>
             <p>Order Cofirmation</p>
         </div>
     </div>
@@ -38,33 +33,17 @@
         <h3>Your Cart</h3>
         <div id="content">
             <div id="product">
-                <table>
-                    <thead>
-                      <tr>
-                        <th>Products</th>
-                        <th>Quantity</th>
-                        <th>Total Price</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    <!-- Append your output to tbody -->
-                    </tbody>
-                </table>
+                <div id="display_product">
+
+                </div>
                 <div id="total_cost">
                     <h3>Total: <span id="items"></span></h3>
+                    <button id="submit">PROCEED TO SECURE CHECKOUT</button>
                 </div>
-            </div>
-            <div id="cost">
-                <h3>Total Cost</h3>
-                <div id="item">
-                    <p>Total Price:</p>
-                    <div id="item_price"></div>
-                </div>
-                <button id="submit">PROCEED TO SECURE CHECKOUT</button>
             </div>
         </div>
     </div>
 </body>
 </html>
 
-<script type="module" src="./cart.js"></script>
+<script src="./cart.js"></script>

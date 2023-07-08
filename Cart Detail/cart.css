@@ -1,3 +1,7 @@
+body{
+    font-family: 'Inconsolata', monospace;
+    background-color: rgb(247, 234, 229);
+}
 #navbar{
     height: 70px;
     display: flex;
@@ -64,16 +68,15 @@
     margin-top: 7%;
 }
 #submit{
-    border: 1px solid purple;
+    border: none;
     padding: 10px;
-    color: purple;
-    background-color: white;
+    color: white;
+    background-color: red;
     cursor: pointer;
-    border-radius: 20px;
     margin-top: 15%;
 }
-#submit:hover{
+/* #submit:hover{
     background-color: purple;
     color: white;
     border: none;
-}
+} */
