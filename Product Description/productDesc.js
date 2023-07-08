@@ -123,3 +123,9 @@ import foo from "../Components/footer.js";
 let footer = document.querySelector("footer");
 footer.innerHTML=foo();
 
+document.getElementById("gotosignin").addEventListener("click",()=>{
+    location.href="../signIn/signIn.html"
+})
+document.getElementById("gotocart").addEventListener("click",()=>{
+    location.href="../Cart Detail/cart.html"
+})
