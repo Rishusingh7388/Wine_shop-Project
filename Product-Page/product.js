@@ -136,7 +136,7 @@ function sortByPrice() {
     
     }
 
-    displayWines(sorted);
+    displayWines(sorted)
 
 }
 
