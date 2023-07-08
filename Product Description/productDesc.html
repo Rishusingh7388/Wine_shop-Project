@@ -7,11 +7,44 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="productDesc.css">
-    <link rel="stylesheet" href="../footer/footer.css">
+        <link rel="shortcut icon" href="https://d29fhpw069ctt2.cloudfront.net/icon/image/120748/preview.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./CSS/productDesc.css">
+    <link rel="stylesheet" href="./CSS/navbar.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
 </head>
 
 <body>
+        <div id="main">
+            <div>
+                <p>Mine Wine</p>
+            </div>
+            <div>
+                    <ul class="menu">
+                      <li><a href="#">CATEGORY</a>
+                        <ul class="submenu">
+                          <li><a href="#">Red Wine</a></li>
+                          <li><a href="#">Rose Wine</a></li>
+                          <li><a href="#">White Wine</a></li>
+                          <li><a href="#">Sparkling Wine</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#">ABOUT US</a></li>
+                      <li><a href="#">SETS & GIFTS</a></li>
+                      <li><a href="#">PROMOTIONS</a></li>
+                    </ul>              
+                <input type="text" name="" id="navbar_inp" oninput="debounc(getdata,500)" placeholder="Type To Search....">
+            </div>
+            <div>
+                <button><i class="fa-solid fa-user"></i></button>
+                <button><i class="fa-solid fa-bag-shopping"></i></button>
+            </div>
+            <div id="hamburger">
+                <button><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+        <div id="debouncdata">
+        
+        </div>
     <div id="first">
         <div>
             <img id="img_of_vine" src=""
@@ -32,7 +65,7 @@
                         <button id="cart_plus"><i class="fa-solid fa-plus"></i></button>
                     </div>
                     <div>
-                        <button id="Add_to_cart_btn"><i class="fa-solid fa-cart-plus"></i> Add To Cart</button>
+                        <button id="Add_to_cart_btn"><i class="fa-solid fa-cart-plus"></i><i class="fa-solid fa-cart-shopping"></i> Add To Cart</button>
                     </div>
                 </div>
                 <div>
@@ -125,9 +158,16 @@
             </div>
         </div>
     </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Product already in cart! 🤷‍♂️</p>
+        </div>
+      </div>
     <footer>
         
     </footer>
 </body>
-<script src="productDesc.js"></script>
+<script type="module" src="./JS/productDesc.js"></script>
+<script src="./JS/navbar.js"></script>
 </html>

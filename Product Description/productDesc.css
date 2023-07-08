@@ -4,6 +4,13 @@
     margin: 0;
     padding: 0;
 }
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
 body{
     background-color: #fff8e9;
     font-family: 'Poppins', sans-serif;
@@ -13,14 +20,14 @@ body{
     margin: auto;
     margin-top: 20px;
     font-size: 30px;
-    color: cornflowerblue;
+    color: #b43d41;
 }
 #first{
     display: flex;
     width: 90%;
     gap: 50px;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 80px;
     border: 1px solid grey;
 }
 #first > div:first-child{
@@ -73,7 +80,7 @@ body{
 #buttons > div:nth-child(2) > div > button{
     padding: 10px 130px;
 }
-button{
+#buttons > div > div > button{
     background-color: #b62e32;
     border: none;
     color: rgb(255, 255, 255);
@@ -86,6 +93,18 @@ button{
     font-size: 18px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
+.fa-cart-plus {
+    display: none;
+}
+#buttons > div > div > #Add_to_cart_btn:hover .fa-cart-plus{
+    display: block;
+}
+#buttons > div > div > #Add_to_cart_btn:hover .fa-cart-shopping{
+    display: none;
+}
+#buttons > div > div > #Add_to_cart_btn{
+    display: flex;
+}
 #buttons + div{
     margin-top: 20px;
 }
@@ -93,6 +112,7 @@ button{
     padding: 10px 198px;
     align-items: center;
 }
+
 button:hover{
     background-color: #940a0e;
 }
@@ -174,6 +194,66 @@ button:hover{
     margin: auto;
     padding: 10px 60px;
 }
+#second > div > div:nth-child(4) > button{
+    background-color: #b62e32;
+    border: none;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.3s;
+    font-size: 18px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    margin: auto;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .modal-content {
+    background-color: #fcf1f1;
+    margin: 15% auto;
+    padding: 30px 20px;
+    border: 1px solid #888;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+  }
+
+.product {
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Close button style for the modal */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+
+
 @media only screen and (max-width: 600px) {
     #first{
         flex-direction: column;
