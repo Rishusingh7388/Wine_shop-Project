@@ -37,7 +37,7 @@ body{
     margin-top: 60%;
 }
 #payment_detail{
-    width: 85%;
+    width: 90%;
     margin-left: 7.5%;
 }
 #main{
@@ -72,7 +72,11 @@ body{
     background-color: rgb(247, 234, 229);
     border: 2px solid rgb(180, 174, 174);
 }
-#pay{
+#detail p{
+    margin-top: -5%;
+    color: red;
+}
+/* #pay{
     width: 30%;
     margin-left: 5%;
     background-color: rgb(247, 234, 229);
@@ -117,7 +121,7 @@ body{
     display: flex;
     flex-direction: column;
 }
-#btn{
+#rzp-button1{
     padding: 10px;
     cursor: pointer;
     border: none;
@@ -125,8 +129,32 @@ body{
     color: rgb(247, 244, 244);
     width: 100%;
     /* margin-left: 10%; */
-}
 /* #btn:hover{
     background-color: orange;
     color: black;
 } */
+@media only screen and (max-width: 500px) {
+    #navbar{
+        display: none;
+    }
+    #main{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    #address{
+        margin-left: 0%;
+        margin-top: 0%;
+        width: 100%;
+    }
+    #detail{
+        width: 100%;
+    }
+
+    #pay {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+        margin-left: 0%;
+    }
+
+}
