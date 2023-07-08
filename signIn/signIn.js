@@ -20,10 +20,10 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-console.log(app);
+// console.log(app);
 
 const auth = getAuth();
-
+let modal = document.getElementById("myModal");
 document.getElementById("login-btn").addEventListener("click", function() {
 
     let email = document.getElementById("email-input").value;
@@ -33,9 +33,22 @@ document.getElementById("login-btn").addEventListener("click", function() {
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
-            alert("Sign In Successfully !!");
-            document.getElementById("signOut").style.display = "block";
-            // ...
+            // alert("Sign In Successfully !!");
+            // function showPopUp() {
+            modal.style.display = "block";
+            // }
+            // setTimeout(function() {
+            //     modal.style.display = "block";
+            // }, 10000);
+            // modal.style.display = "none";
+
+            function ClosePopUp() {
+                modal.style.display = "none";
+            }
+            setTimeout(ClosePopUp, 2000);
+
+            window.location.href = "../home"
+                // ...
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -54,8 +67,14 @@ document.getElementById("googleLogin").addEventListener("click", function() {
             // The signed-in user info.
             const user = result.user;
 
-            alert("Sign in successfully!!");
+            // alert("Sign in successfully!!");
+            modal.style.display = "block";
 
+
+            function ClosePopUp() {
+                modal.style.display = "none";
+            }
+            setTimeout(ClosePopUp, 2000);
             window.location.href = "../home"
                 // IdP data available using getAdditionalUserInfo(result)
                 // ...
