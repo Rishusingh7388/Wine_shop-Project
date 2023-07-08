@@ -48,15 +48,15 @@ function displayProduct(data) {
         let priceDiv = document.createElement("div")
         priceDiv.setAttribute("id", "priceDiv")
 
-        let mrp = document.createElement("p")
-        mrp.setAttribute("id", "mrp")
-        mrp.textContent = "₹" + elem.mrp
+        // let mrp = document.createElement("p")
+        // mrp.setAttribute("id", "mrp")
+        // mrp.textContent = "₹" + elem.mrp
 
         let price = document.createElement("p")
         price.setAttribute("id", "price")
         price.textContent = "₹" + elem.price
 
-        priceDiv.append(mrp, price)
+        priceDiv.append( price)
 
         let divQnt = document.createElement("div")
         divQnt.setAttribute("id", "divQnt")
@@ -64,6 +64,9 @@ function displayProduct(data) {
         let lessBtn = document.createElement("button")
         lessBtn.setAttribute("id", "btn1")
         lessBtn.textContent = "-"
+        lessBtn.addEventListener("click", function() {
+            decreaseQnt(elem.price)
+        })
         
         let p = document.createElement("p")
         p.setAttribute("id", "spanQnt")
@@ -73,7 +76,7 @@ function displayProduct(data) {
         highBtn.setAttribute("id", "btn2")
         highBtn.textContent = "+"
         highBtn.addEventListener("click", function() {
-            increaseQnt()
+            increaseQnt(elem.price)
         })
 
         divQnt.append(lessBtn, p, highBtn)
@@ -92,43 +95,49 @@ function displayProduct(data) {
     })
 }
 
+// let delArr = JSON.parse(localStorage.getItem("cart")) || []
+
 function delData(elem, index) {
     productArr.splice(index, 1)
-    localStorage.setItem("cart", JSON.stringify(productArr))
+    localStorage.setItem("cart-product", JSON.stringify(productArr))
     displayProduct(productArr)
 }
 
-function calTotal() {
-    let total = productArr.reduce(function (acc, currEle) {
-        return acc + currEle.price
-    }, 0)
-
-    let span = document.createElement("span")
-    span.textContent = "₹" + total
-
-    document.querySelector("#items").append(span)
-
-    localStorage.setItem("finalCost", total)
-}
-
-function decreaseQnt(){
-    let qnt = document.querySelector("#spanQnt").textContent
-    if(qnt !== 1){
-        qnt--
+function decreaseQnt(price){
+    let qnt = document.querySelector("#spanQnt")
+    // let quant = 1
+    if(quant > 1){
+        quant--
+        qnt.textContent = quant
+        let amount = quant * price
+        document.querySelector("#finalPrice").innerText = amount
     }else{
         document.querySelector("#btn1").style.display = "block"
     }
 }
-
+// let total;
 let qnt = document.querySelector("#spanQnt")
-let quant = 1
-function increaseQnt() {
-    if(quant == 1){
-        quant++
-    }
-    // else{
+var quant = 1
+function increaseQnt(price) {
+    quant++
+    qnt.textContent = quant
+    let amount = quant * price
+    document.querySelector("#finalPrice").innerText = amount
+    // document.querySelector("#total_amount").innerText = document.querySelector("#total_amount").innerText + amount
+}
 
-    // }
+function calTotal() { 
+    var total = productArr.reduce(function (acc, currEle) {
+        return acc + currEle.price
+    }, 0)
+
+    let span = document.createElement("span")
+    span.setAttribute("id", "total_amount")
+    span.textContent = "₹" + total
+    // var pot = total
+    document.querySelector("#items").append(span)
+
+    localStorage.setItem("finalCost", total)
 }
 
 document.querySelector("#submit").addEventListener("click", checkOut)
