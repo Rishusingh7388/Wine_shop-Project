@@ -71,6 +71,10 @@ body {
     color: purple;
 }
 
+#goto-signUp-page>a {
+    text-decoration: none;
+}
+
 #login-btn:hover {
     background-color: plum;
 }
@@ -83,6 +87,10 @@ body {
 
 #googleLogin>img {
     width: 100%;
+}
+
+#home {
+    cursor: pointer;
 }
 
 

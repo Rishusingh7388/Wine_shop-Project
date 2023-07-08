@@ -74,11 +74,19 @@ body {
     background-color: plum;
 }
 
+#home {
+    cursor: pointer;
+}
+
 #goto-signIn-page {
     display: flex;
     justify-content: space-between;
     font-size: large;
     color: purple;
+}
+
+#goto-signIn-page>a {
+    text-decoration: none;
 }
 
 #googleLogin {
