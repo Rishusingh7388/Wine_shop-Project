@@ -1,10 +1,4 @@
 
-import Navbar from './component/nav.js'
-import foo from './component/footer.js'
-
-document.getElementById("navbar").innerHTML = Navbar()
-document.getElementById("footer").innerHTML = foo()
-
 
 
 let limit=9;
@@ -60,7 +54,8 @@ function displayWines(data){
         image.setAttribute("id", "images")
         anchor.append(image)
         image.addEventListener("click",function(){
-            gotoProDesc(elem)
+            gotoProDesc(elem.id)
+            console.log(elem.id)
         })
 
 
@@ -116,13 +111,14 @@ function setTocart(elem){
 
 } 
 
-function  gotoProDesc(elem){
-    localStorage.setItem("desc", JSON.stringify(elem))
+
+function gotoProDesc(id){
+    localStorage.setItem("ID", JSON.stringify(id))
  }
 
 
 
-
+//sort by price
 function sortByPrice() {
     var value = document.getElementById("select-price").value;
 
@@ -147,7 +143,6 @@ function sortByPrice() {
 
 
 //filter by country
-
 function filterbyCountry(){
     
     var country = document.getElementById("select-country").value
@@ -162,6 +157,7 @@ function filterbyCountry(){
       displayWines(filteredVal)
 
 }
+
 
 //filter by discount
 function filterbyDiscount(){
@@ -178,6 +174,8 @@ function filterbyDiscount(){
       displayWines(filteredVal)
 
 }
+
+
 
 //filter by category_1
 function filterbyCategory_1(){
@@ -322,7 +320,6 @@ next.addEventListener("click", ()=>{
 
 
 // fetchwithSearch(search)
-
 async function fetchwithSearch(search){
    
     
@@ -339,6 +336,7 @@ async function fetchwithSearch(search){
 }
 
 
+//my search
 function mySearch(){
     let search = document.getElementById("search-inp").value
     console.log("yayy")
@@ -346,12 +344,12 @@ function mySearch(){
 }
 
 
+
 document.getElementById("search-inp").addEventListener("click", ()=>{
     // document.getElementById("search-inp").style.border = "none"
 })
 
 
-// export {mySearch, filterbyCountry, filterbyDiscount}
 
 
 
