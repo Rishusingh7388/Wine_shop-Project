@@ -30,7 +30,7 @@ const auth = getAuth();
 // let userArr = JSON.parse(localStorage.getItem("user_details")) || [];
 
 let userArr = JSON.parse(localStorage.getItem("user_details")) || [];
-
+let modal = document.getElementById("myModal");
 document.getElementById("signup-btn").addEventListener("click", function() {
 
     let email = document.getElementById("email-input").value;
@@ -49,7 +49,15 @@ document.getElementById("signup-btn").addEventListener("click", function() {
             user.displayName = name;
             user.phoneNumber = number;
             // console.log(user);
-            alert("Sign up successfully!");
+            // alert("Sign up successfully!");
+
+            modal.style.display = "block";
+
+
+            function ClosePopUp() {
+                modal.style.display = "none";
+            }
+            setTimeout(ClosePopUp, 2000);
 
             //adding data in local storage
             userArr.push({
@@ -109,7 +117,14 @@ document.getElementById("googleLogin").addEventListener("click", function() {
                 name: user.displayName,
                 email: user.email,
             });
-            alert("Sign up successfully!");
+            // alert("Sign up successfully!");
+            modal.style.display = "block";
+
+
+            function ClosePopUp() {
+                modal.style.display = "none";
+            }
+            setTimeout(ClosePopUp, 2000);
 
             window.location.href = "../signIn/signIn.html";
 
