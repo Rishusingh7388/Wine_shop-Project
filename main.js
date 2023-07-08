@@ -62,9 +62,9 @@
 // let nav = document.getElementById("nav_up");
 // nav.innerHTML = Navbar();
 
-import foo from "./Components/footer.js";
-let footer = document.querySelector("footer");
-footer.innerHTML = foo();
+// import foo from "./Components/footer.js";
+// let footer = document.querySelector("footer");
+// footer.innerHTML = foo();
 
 
 
