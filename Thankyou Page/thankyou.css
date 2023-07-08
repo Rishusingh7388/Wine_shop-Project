@@ -1,0 +1,85 @@
+#navbar{
+    height: 70px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#navbar div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#navbar p{
+    margin-top: -5%;
+}
+#home img{
+    width: 30px;
+    margin-top: 60%;
+}
+#cart img{
+    width: 30px;
+    margin-top: 60%;
+}
+#checkout img{
+    width: 30px;
+    margin-top: 60%;
+}
+#payment img{
+    width: 30px;
+    margin-top: 60%;
+}
+#thanks{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 3%;
+}
+#order{
+    display: flex;
+    justify-content: space-between;
+}
+#order h3{
+    margin-top: 15%;
+}
+#order p{
+    margin-top: 10%;
+}
+#homeBtn{
+    width: 20%;
+    margin-top: 2%;
+    margin-right: 20%;
+    height: 40px;
+    border: 1px solid purple;
+    background-color: white;
+    cursor: pointer;
+    color: purple;
+    border-radius: 20px;
+}
+#homeBtn:hover{
+    background-color: purple;
+    color: white;
+}
+#orderDetail{
+    display: flex;
+    justify-content: space-between;
+}
+#orderProduct{
+    width: 70%;
+}
+#amount{
+    display: flex;
+    justify-content: end;
+    margin-top: 5%;
+}
+#transaction{
+    width: 25%;
+}
+#transaction h3{
+    margin-top: 0%;
+}
+#displayPrice{
+    display: flex;
+    justify-content: space-between;
+}
+#item_amount{
+    margin-top: 7%;
+}
