@@ -92,12 +92,13 @@ document.getElementById("signup-btn").addEventListener("click", function() {
             if (errorCode == "auth/missing-password") {
                 alert("Please enter valid password !!")
             }
+            // auth/email-already-in-use
+            if (errorCode == "auth/email-already-in-use") {
+                alert("Email already in use!!")
+            }
             if (errorCode == "auth/weak-password") {
                 alert("Password must contain atleast 6 characters!!")
-            } else {
-                alert("Please enter valid email and password !!")
             }
-
         });
 })
 
@@ -148,5 +149,5 @@ document.getElementById("googleLogin").addEventListener("click", function() {
 })
 
 document.getElementById("home").addEventListener("click", function() {
-    window.location.href = "../home"
+    window.location.href = "../index.html"
 })

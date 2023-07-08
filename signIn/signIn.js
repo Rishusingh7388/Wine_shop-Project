@@ -47,7 +47,7 @@ document.getElementById("login-btn").addEventListener("click", function() {
             }
             setTimeout(ClosePopUp, 2000);
 
-            window.location.href = "../home"
+            window.location.href = "../index.html"
                 // ...
         })
         .catch((error) => {
@@ -75,7 +75,7 @@ document.getElementById("googleLogin").addEventListener("click", function() {
                 modal.style.display = "none";
             }
             setTimeout(ClosePopUp, 2000);
-            window.location.href = "../home"
+            window.location.href = "../index.html"
                 // IdP data available using getAdditionalUserInfo(result)
                 // ...
         }).catch((error) => {
@@ -91,5 +91,5 @@ document.getElementById("googleLogin").addEventListener("click", function() {
 })
 
 document.getElementById("home").addEventListener("click", function() {
-    window.location.href = "../home"
+    window.location.href = "../index.html"
 })
