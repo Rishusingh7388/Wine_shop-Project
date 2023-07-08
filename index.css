@@ -181,6 +181,15 @@ body{
       background-color: #ffda90;
       
   }
+
+  .logincart{
+    text-decoration: none;
+    color: #1e1e1e;
+  }
+
+  .logincart:hover{
+    color: #1e1e1e;
+  }
   
   @media only screen and (max-width: 768px) {
       #main > div:nth-child(2){
