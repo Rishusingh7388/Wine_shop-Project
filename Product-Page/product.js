@@ -120,13 +120,13 @@ function gotoProDesc(id){
 
 //sort by price
 function sortByPrice() {
-    var value = document.getElementById("select-price").value;
+    var value = document.getElementById("select-price").value;main
 
     if (value === "htl") {
     var sorted = fetchedData.sort((a, b) => {
         return b.price - a.price;
     })
-    console.log(sorted);
+    console.log(sorted)
     }
 
     if (value === "lth") {
